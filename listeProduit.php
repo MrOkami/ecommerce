@@ -30,7 +30,7 @@ try{
 
 <?php
 //stockage SQL dans une variable
-$sql = "SELECT * FROM produits ORDER BY id_produits DESC";
+$sql = "SELECT * FROM produits ORDER BY id_produit DESC";
 //variable qui stocke la co PDO et l'execute de la requete sql
 $res = $db->query($sql);
 
@@ -47,7 +47,7 @@ $res = $db->query($sql);
             <th>Image</th>
             <th>Description</th>
             <th>Prix</th>
-            <th>D?tails</th>
+            <th>Détails</th>
             <th>Editer</th>
             <th>Supprimer</th>
         </tr>
@@ -65,10 +65,10 @@ $res = $db->query($sql);
                 <th><?php echo $row['nom_produit'] ?></th>
                 <th><img src="<?= $row['image_produit']?>" alt="<?= $row['nom_produit'] ?>" title="<?= $row['nom_produit']?>"</th>
                 <th><?= $row['description_produit']?></th>
-                <th><?= $row['prix_produit']?> ?</th>
-                <th><a href="detailProduit.php?id_produits=<?= $row['id_produits'] ?>" class="btn btn-default">D?tails</a></th>
-                <th><a href="majProduit.php?id_produits=<?= $row['id_produits'] ?>" class="btn btn-primary">Editer</a></th>
-                <th><a href="deleteProduit.php?id=<?= $row['id_produits'] ?>" class="btn btn-warning">Supprimer</a></th>
+                <th><?= $row['prix_produit']?> €</th>
+                <th><a href="detailProduit.php?id_produit=<?= $row['id_produit'] ?>" class="btn btn-default">Détails</a></th>
+                <th><a href="majProduit.php?id_maj=<?= $row['id_produit'] ?>" class="btn btn-info">Editer</a></th>
+                <th><a href="deleteProduit.php?id=<?= $row['id_produit'] ?>" class="btn btn-warning">Supprimer</a></th>
             </tr>
             <?php
 

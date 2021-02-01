@@ -48,7 +48,7 @@ try{
 
             <div class="form-group">
                 <label for="prix_produit">Prix du Produit</label>
-                <input type="number" min="1" max="999999" class="form-control" id="prix_produit" name="prix_produit" required>
+                <input type="number" min="1" max="999999" step="0.01" class="form-control" id="prix_produit" name="prix_produit" required>
             </div>
 
             <!--------------- bouton validation --------------->

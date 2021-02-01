@@ -23,14 +23,14 @@ try{
 
     <div class="alert-danger p-2">
         <h1 class="text-center text-danger"><strong>ATTENTION</strong></h1>
-        <h2 class="text-center text-dark">LE PRODUIT CONCERNER VA ETRE SUPPRIM�</h2>
+        <h2 class="text-center text-dark">LE PRODUIT CONCERNER VA ETRE SUPPRIME</h2>
         <?php
         //Requ�tes SQL
-        $sql = "SELECT * FROM produits WHERE id_produits = ?";
+        $sql = "SELECT * FROM produits WHERE id_produit = ?";
         $delete = $db->prepare($sql);
         $id = $_GET['id'];
 
-        //Passage du ? � la valeur de $_GET['id_produits']
+
         $delete->bindParam(1, $id);
         //Execute la requ�te
         $delete->execute();
@@ -38,14 +38,14 @@ try{
         $result = $delete->fetch();
         ?>
         <ul class="list-group">
-            <li class="list-group-item">ID : <?= $result['id_produits'] ?></li>
+            <li class="list-group-item">ID : <?= $result['id_produit'] ?></li>
             <li class="list-group-item">Nom : <?= $result['nom_produit'] ?></li>
             <li class="list-group-item">Description: <?= $result['description_produit'] ?></li>
             <li class="list-group-item">image : <img src="<?= $result['image_produit'] ?>" alt="<?= $result['nom_produit'] ?>" title="<?= $result['nom_produit'] ?>"></li>
-            <li class="list-group-item">Prix : <?= $result['prix_produit'] ?> �</li>
+            <li class="list-group-item">Prix : <?= $result['prix_produit'] ?> €</li>
         </ul>
 
-        <a href="confirmDelete.php?id=<?=$result['id_produits'] ?>" class="btn btn-danger mt-2">CONFIRMER LA SUPPRESSION DU PRODUIT = <?= $result['nom_produit'] ?></a>
+        <a href="confirmDelete.php?id=<?=$result['id_produit'] ?>" class="btn btn-danger mt-2">CONFIRMER LA SUPPRESSION DU PRODUIT = <?= $result['nom_produit'] ?></a>
 
 
     </div>

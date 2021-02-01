@@ -22,7 +22,7 @@ try{
 
 
 //Requ�tes SQL
-$sql = "SELECT * FROM produits WHERE id_produits = ?";
+$sql = "SELECT * FROM produits WHERE id_produit = ?";
 //Stock de la requ�te dans une variable ($requ�te) et appel de la connexion puis de la fonction requ�t�e prepar�e
 
 $req = $db->prepare($sql);
@@ -32,7 +32,7 @@ $req = $db->prepare($sql);
 
 //R�cup�ration de id  <a href=detailsProduit.php?id_produit=<?= $row['id_produit'];
 //On stocke le r�sultat de $_GET['id_produit']
-$id = $_GET['id_produits'];
+$id = $_GET['id_produit'];
 //Passage du ? � la valeur de $_GET['id_produit']
 $req->bindParam(1, $id);
 //Execute la requ�te
@@ -55,11 +55,11 @@ if($result){
         </thead>
         <tbody>
         <tr>
-            <td><?= $result['id_produits'] ?></td>
+            <td><?= $result['id_produit'] ?></td>
             <td><?= $result['nom_produit'] ?></td>
             <td><?= $result['description_produit'] ?></td>
-            <td><img src="<?= $result['image_produit'] ?>" alt="<?= $result['nom_produit'] ?>" title="<?= $result['nom_produit'] ?>">  </td>
-            <td><?= $result['prix_produit'] ?> �</td>
+            <td><img src="<?= $result['image_produit'] ?>" +">  </td>
+            <td><?= $result['prix_produit'] ?> €</td>
         </tr>
         </tbody>
     </table>

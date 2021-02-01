@@ -69,8 +69,8 @@ $insert->bindParam(4, $prix_produit);
 //si l'insertion fonctionne
 if($insert->execute(array($nom_produit, $description_produit, $image_produit, $prix_produit))){
     //Message de r�usite + bouton de retour � la liste
-    echo "<p class='alert-success'>Votre produit � bien �t� ajout� !</p>";
-    echo "<a href='listeProduit.php' class='btn btn-outline-success'>Retour � la liste des produit</a>";
+    echo "<p class='alert-success'>Votre produit à bien été ajouté !</p>";
+    echo "<a href='listeProduit.php' class='btn btn-outline-success'>Retour à la liste des produit</a>";
 }else{
     echo "<p class='alert-danger'>Erreur: Merci de remplir tous les champs</p>";
 }
